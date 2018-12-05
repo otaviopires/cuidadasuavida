@@ -1,15 +1,36 @@
-<html>
-<head>
- <style>
-  .cuida {width:100%}
-  h1 {font-size:250px}
- </style>
-</head>
 
-<body>
- <div class="cuida">
-  <h1>CUIDA DA SUA VIDA</h1>
- </div>
-</body>
-</html>
-    
+<!doctype html>
+
+<title>LED Scroller</title>
+
+<style>
+div#scroller {
+  width: 720px;
+  background:#000;
+  border:3px solid #000;
+  overflow:hidden;
+  zoom: 186%;
+}
+div#scroller div {
+  width: 4px;
+  height: 4px;
+  float: left;
+  margin: 1px;
+  background: #333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius:    3px;
+  border-radius:           3px;
+}
+div#scroller div.on{
+  background: #f00;
+}
+</style>
+
+<div id="scroller"></div>
+
+<script src="./scroller.js"></script>
+<script>
+  Scroller.init('scroller', 120,7);
+  Scroller.enqueue('CUIDA DA SUA VIDA');
+  Scroller.start();
+</script>
